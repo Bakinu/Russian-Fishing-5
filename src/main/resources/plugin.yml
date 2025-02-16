@@ -1,0 +1,12 @@
+name: RF5
+version: '0.0.1'
+main: org.bakinu.rF5RussianFishing5.RFRussianFishing5
+api-version: '1.21'
+commands:
+  giverod:
+    description: Выдаёт удочку
+  fishmenu:
+    description: Меню рыбалки
+permissions:
+  rf5.giverod:
+    description: Право на выдачу удочек
