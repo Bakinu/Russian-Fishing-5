@@ -11,8 +11,8 @@ import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class CommandGiveFishingRod implements CommandExecutor {
-    private MiniMessage miniMessage = MiniMessage.miniMessage();
-    private FishingRodManager fishingRodManager;
+    private final MiniMessage miniMessage = MiniMessage.miniMessage();
+    private final FishingRodManager fishingRodManager;
 
     public CommandGiveFishingRod(FishingRodManager fishingRodManager) {
         this.fishingRodManager = fishingRodManager;

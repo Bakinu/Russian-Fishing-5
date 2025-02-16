@@ -7,19 +7,17 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Getter
 public class FishManager {
-    private final MiniMessage miniMessage = MiniMessage.miniMessage();
+    private ConfigManager configManager;
 
-    private final Map<String, Fish> fishMap = new HashMap<>(){{
-        put("Salmon", new Fish("<#474747>Обычный Лосось", 10, FishRarity.COMMON, 1.4, "salmon", "SALMON", FishMutation.NON_MUTAED));
-        put("BigSalmon", new Fish("<#474747>Большой Лосось", 10, FishRarity.UNCOMMON, 2.1, "big_salmon", "SALMON", FishMutation.BIG));
-        put("SmallSalmon", new Fish("<#474747>Маленький Лосось", 10, FishRarity.COMMON, 2.1, "small_salmon", "SALMON", FishMutation.SMALL));
-    }};
+    public FishManager(ConfigManager configManager) {
+        this.configManager = configManager;
+    }
+
+    private final MiniMessage miniMessage = MiniMessage.miniMessage();
 
     public void createFish(Fish fish, Player player) {
         ItemStack itemStack = new ItemStack(Material.getMaterial(fish.getModelType()));

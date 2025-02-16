@@ -5,7 +5,7 @@ import lombok.Getter;
 
 @Getter
 public enum FishMutation {
-    NON_MUTAED("<#787878>Обычная"),
+    NON_MUTATED("<#787878>Обычная"),
     BIG("<#787878>Большая"),
     SMALL("<#404040>Маленькая");
 

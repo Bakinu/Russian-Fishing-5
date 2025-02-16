@@ -3,5 +3,4 @@
 /build/
 /build/classes/java/main/
 .idea
-src/main/java/org/bakinu/rF5RussianFishing5/util/ConfigManager.java
 src/main/java/org/bakinu/rF5RussianFishing5/util/DataManager.java

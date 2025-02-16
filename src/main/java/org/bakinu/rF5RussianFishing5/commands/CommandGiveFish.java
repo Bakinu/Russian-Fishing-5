@@ -1,6 +1,7 @@
 package org.bakinu.rF5RussianFishing5.commands;
 
 import net.kyori.adventure.text.minimessage.MiniMessage;
+import org.bakinu.rF5RussianFishing5.util.ConfigManager;
 import org.bakinu.rF5RussianFishing5.util.FishManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -12,8 +13,11 @@ public class CommandGiveFish implements CommandExecutor {
     private final FishManager fishManager;
     MiniMessage miniMessage = MiniMessage.miniMessage();
 
-    public CommandGiveFish(FishManager fishManager) {
+    private final ConfigManager configManager;
+
+    public CommandGiveFish(FishManager fishManager, ConfigManager configManager) {
         this.fishManager = fishManager;
+        this.configManager = configManager;
     }
 
     @Override
@@ -24,7 +28,7 @@ public class CommandGiveFish implements CommandExecutor {
         if (player.hasPermission("rf5.givefish")) {
             if (args.length > 0) {
                 String fishIndex = args[0];
-                fishManager.createFish(fishManager.getFishMap().get(fishIndex), player);
+                fishManager.createFish(configManager.getFishMap().get(fishIndex), player);
             } else {
                 player.sendMessage(miniMessage.deserialize("<italic:false><#850000>Введите индекс нужной рыбы!"));
             }

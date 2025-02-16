@@ -7,7 +7,7 @@ public class Fish {
     private final String name;
     private final int price;
     private final FishRarity rarity;
-    private String tag;
+    private final String tag;
     private final String modelType;
     private final double mass;
     private final FishMutation mutation;
@@ -19,5 +19,6 @@ public class Fish {
         this.mass = mass;
         this.modelType = modelType;
         this.mutation = mutation;
+        this.tag = tag;
     }
 }
