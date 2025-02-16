@@ -16,9 +16,9 @@ public class FishManager {
     private final MiniMessage miniMessage = MiniMessage.miniMessage();
 
     private final Map<String, Fish> fishMap = new HashMap<>(){{
-        put("Salmon", new Fish("<#474747>Лосось", 10, "<#4a4a4a><italic:false>Обычная", 1.4, "salmon", "SALMON", null));
-        put("BigSalmon", new Fish("<#474747>Большой Лосось", 10, "<#4a4a4a><italic:false>Обычная", 2.1, "big_salmon", "SALMON", FishMutation.BIG));
-        put("SmallSalmon", new Fish("<#474747>Маленький Лосось", 10, "<#4a4a4a><italic:false>Обычная", 2.1, "small_salmon", "SALMON", FishMutation.SMALL));
+        put("Salmon", new Fish("<#474747>Лосось", 10, FishRarity.COMMON, 1.4, "salmon", "SALMON", FishMutation.NON_MUTAED));
+        put("BigSalmon", new Fish("<#474747>Большой Лосось", 10, FishRarity.UNCOMMON, 2.1, "big_salmon", "SALMON", FishMutation.BIG));
+        put("SmallSalmon", new Fish("<#474747>Маленький Лосось", 10, FishRarity.COMMON, 2.1, "small_salmon", "SALMON", FishMutation.SMALL));
     }};
 
     public void createFish(Fish fish, Player player) {
@@ -29,8 +29,8 @@ public class FishManager {
         itemMeta.lore(List.of(miniMessage.deserialize("<italic:false><#ffbc03>Стоимость: " + "<#ffcb3d>" + fish.getPrice()),
                 miniMessage.deserialize("<italic:false><#ff270f>Масса рыбы: " + "<#ff412b>" +  fish.getMass() + "кг"),
                 miniMessage.deserialize("<italic:false>" + fish.getMutation().getMutation()),
-                miniMessage.deserialize(fish.getRarity())
-                ));
+                miniMessage.deserialize(fish.getRarity().getRarity())
+        ));
 
         itemStack.setItemMeta(itemMeta);
         player.getInventory().addItem(itemStack);

@@ -6,13 +6,13 @@ import lombok.Getter;
 public class Fish {
     private final String name;
     private final int price;
-    private final String rarity;
+    private final FishRarity rarity;
     private String tag;
     private final String modelType;
     private final double mass;
     private final FishMutation mutation;
 
-    public Fish(String name, int price, String rarity, double mass, String tag, String modelType, FishMutation mutation) {
+    public Fish(String name, int price, FishRarity rarity, double mass, String tag, String modelType, FishMutation mutation) {
         this.name = name;
         this.price = price;
         this.rarity = rarity;

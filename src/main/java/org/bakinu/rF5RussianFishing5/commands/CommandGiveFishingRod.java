@@ -2,22 +2,20 @@ package org.bakinu.rF5RussianFishing5.commands;
 
 import net.kyori.adventure.text.minimessage.MiniMessage;
 import org.bakinu.rF5RussianFishing5.util.FishingRodManager;
-import org.bukkit.NamespacedKey;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandException;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.Plugin;
 import org.jetbrains.annotations.NotNull;
 
 public class CommandGiveFishingRod implements CommandExecutor {
     private MiniMessage miniMessage = MiniMessage.miniMessage();
     private FishingRodManager fishingRodManager;
 
-    public CommandGiveFishingRod(Plugin plugin, NamespacedKey key) {
-        this.fishingRodManager = new FishingRodManager(plugin, key);
+    public CommandGiveFishingRod(FishingRodManager fishingRodManager) {
+        this.fishingRodManager = fishingRodManager;
     }
 
 
