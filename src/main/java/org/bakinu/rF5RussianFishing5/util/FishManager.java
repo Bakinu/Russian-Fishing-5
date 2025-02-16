@@ -10,7 +10,7 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.List;
 
 @Getter
-public class FishManager {
+public final class FishManager {
     private ConfigManager configManager;
 
     public FishManager(ConfigManager configManager) {
