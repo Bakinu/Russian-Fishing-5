@@ -3,21 +3,23 @@ package org.bakinu.rF5RussianFishing5.gui;
 import org.bukkit.Material;
 import xyz.xenondevs.invui.gui.Gui;
 import xyz.xenondevs.invui.item.builder.ItemBuilder;
-import xyz.xenondevs.invui.item.impl.AbstractItem;
 import xyz.xenondevs.invui.item.impl.SimpleItem;
 
-import java.awt.*;
+public class MenuGUI {
 
-public class MenuGui {
-    public Gui createGui() {
-            return Gui.normal()
-                    .setStructure(
-                            "# # # # # # # # #",
-                            "# . . . . . . . #",
-                            "# . . . . . . . #",
-                            "# # # # # # # # #")
-                    .addIngredient('#', new SimpleItem(new ItemBuilder(Material.TNT)))
-                    .addIngredient('.', new SimpleItem(new ItemBuilder(Material.DIAMOND)))
-                    .build();
+    public Gui createMainGui() {
+        return Gui.normal()
+                .setStructure(
+                        "# # # # # # # # #",
+                        "# . . . . . . . #",
+                        "# . С . М . Б . #",
+                        "# . . . . . . . #",
+                        "# # # # # # # # #")
+                .addIngredient('#', new SimpleItem(new ItemBuilder(Material.BLACK_STAINED_GLASS_PANE).setDisplayName(" ")))
+                .addIngredient('.', new SimpleItem(new ItemBuilder(Material.AIR)))
+                .addIngredient('С', new StatsGUI())
+                .addIngredient('М', new ShopGUI())
+                .addIngredient('Б', new BoostGUI())
+                .build();
     }
 }

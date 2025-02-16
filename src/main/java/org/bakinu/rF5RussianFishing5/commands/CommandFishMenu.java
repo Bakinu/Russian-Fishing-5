@@ -1,5 +1,6 @@
 package org.bakinu.rF5RussianFishing5.commands;
 
+import org.bakinu.rF5RussianFishing5.gui.MenuGUI;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -17,10 +18,9 @@ public class CommandFishMenu implements CommandExecutor {
     public boolean onCommand(@NotNull CommandSender sender, @NotNull Command command, @NotNull String label, String[] args) {
         if (sender instanceof Player) {
             Player player = (Player) sender;
+            MenuGUI menuGUI = new MenuGUI();
+            Gui gui = menuGUI.createMainGui();
 
-            Gui gui = createGui();
-
-            // Открываем GUI для игрока
             Window window = Window.single()
                     .setViewer(player)
                     .setGui(gui)
@@ -32,18 +32,5 @@ public class CommandFishMenu implements CommandExecutor {
             sender.sendMessage("Эта команда доступна только игрокам!");
             return false;
         }
-    }
-
-    // Метод для создания GUI
-    private Gui createGui() {
-        return Gui.normal()
-                .setStructure(
-                        "# # # # # # # # #",
-                        "# . . . . . . . #",
-                        "# . . . . . . . #",
-                        "# # # # # # # # #")
-                .addIngredient('#', new SimpleItem(new ItemBuilder(Material.TNT))) // Границы из TNT
-                .addIngredient('.', new SimpleItem(new ItemBuilder(Material.DIAMOND))) // Внутренние блоки из алмазов
-                .build();
     }
 }
