@@ -1,6 +1,7 @@
 package org.bakinu.rF5RussianFishing5;
 
 import org.bakinu.rF5RussianFishing5.commands.CommandFishMenu;
+import org.bakinu.rF5RussianFishing5.commands.CommandGiveFish;
 import org.bakinu.rF5RussianFishing5.commands.CommandGiveFishingRod;
 import org.bakinu.rF5RussianFishing5.events.EventPlayerFish;
 import org.bakinu.rF5RussianFishing5.util.FishManager;
@@ -21,6 +22,9 @@ public final class RFRussianFishing5 extends JavaPlugin {
 
         CommandFishMenu commandFishMenu = new CommandFishMenu();
         getCommand("fishmenu").setExecutor(commandFishMenu);
+
+        CommandGiveFish commandGiveFish = new CommandGiveFish(fishManager);
+        getCommand("givefish").setExecutor(commandGiveFish);
     }
 
     @Override

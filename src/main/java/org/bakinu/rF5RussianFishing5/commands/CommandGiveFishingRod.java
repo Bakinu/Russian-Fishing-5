@@ -30,9 +30,9 @@ public class CommandGiveFishingRod implements CommandExecutor {
         }
 
         if (args.length > 0) {
-            String fishingRodName = args[0];
+            String fishingRodIndex = args[0];
             try {
-                ItemStack fishingRod = fishingRodManager.createRod(fishingRodManager.getFishingRodsMap().get(fishingRodName), player);
+                ItemStack fishingRod = fishingRodManager.createRod(fishingRodManager.getFishingRodsMap().get(fishingRodIndex), player);
             } catch (CommandException e) {
                 e.printStackTrace();
                 player.sendMessage("Такой удочки не существует!");

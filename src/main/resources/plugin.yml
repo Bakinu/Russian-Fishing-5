@@ -7,6 +7,10 @@ commands:
     description: Выдаёт удочку
   fishmenu:
     description: Меню рыбалки
+  givefish:
+    description: Выдаёт рыбу
 permissions:
   rf5.giverod:
     description: Право на выдачу удочек
+  rf5.givefish:
+    description: Право на выдачу рыбы
